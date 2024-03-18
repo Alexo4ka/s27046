@@ -1,14 +1,15 @@
 ﻿// See https://aka.ms/new-console-template for more information
-public static double CalculateAverage(int[] numbers)
-{
-    if (numbers.Length == 0)
-    {
-        return 0;
+public class MyUtility {
+    public static int findMax(int[] arr) {
+        if (arr.length == 0) {
+            throw new IllegalArgumentException("Array must not be empty");
+        }
+        int max = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        return max;
     }
-    int sum = 0;
-    foreach (int num in numbers)
-    {
-        sum += num;
-    }
-    return (double)sum / numbers.Length;
 }
