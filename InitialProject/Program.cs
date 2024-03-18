@@ -1,10 +1,15 @@
 ﻿// See https://aka.ms/new-console-template for more information
 public class MyUtility {
-    public static double calculateAverage(int[] arr) {
-        double total = 0; // Changed variable name here
-        for (int i = 0; i < arr.length; i++) {
-            total += arr[i];
+    public static int findMax(int[] arr) {
+        if (arr.length == 0) {
+            throw new IllegalArgumentException("Array must not be empty");
         }
-        return total / arr.length;
+        int max = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        return max;
     }
 }
